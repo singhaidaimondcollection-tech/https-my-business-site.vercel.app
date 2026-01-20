@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Product | Singhai Jain Collection</title>
+</head>
+<body>
+
+<h2>Add New Product</h2>
+
+<form onsubmit="addProduct(event)">
+  <input id="name" placeholder="Product Name"><br><br>
+  <input id="price" placeholder="Price"><br><br>
+  <input id="image" placeholder="Image path (assets/photo.jpg)"><br><br>
+  <input id="video" placeholder="Video path (assets/video.mp4)"><br><br>
+  <textarea id="desc" placeholder="Product Details"></textarea><br><br>
+  <button>Add Product</button>
+</form>
+
+<script>
+function addProduct(e){
+  e.preventDefault();
+
+  let product = {
+    name: name.value,
+    price: price.value,
+    image: image.value,
+    video: video.value,
+    desc: desc.value
+  };
+
+  let products = JSON.parse(localStorage.getItem("products") || "[]");
+  products.push(product);
+  localStorage.setItem("products", JSON.stringify(products));
+
+  alert("Product Added Successfully!");
+}
+</script>
+
+</body>
+</html>
