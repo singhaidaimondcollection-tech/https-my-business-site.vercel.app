@@ -124,6 +124,122 @@ video.mp4
 <video autoplay muted loop playsinline width="100%">
   <source src="video-name.mp4" type="video/mp4">
 </video>
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ===== SEO META TAGS ===== -->
+<title>Singhai Diamond Collection | Natural Panna Diamonds</title>
+<meta name="description" content="Buy certified natural diamonds from Panna mines. Rings, necklaces, mangalsutra, earrings & more at affordable prices.">
+<meta name="keywords" content="Singhai Diamond, Panna Diamonds, Natural Diamonds, Diamond Jewelry, Mangalsutra, Gold Ring">
+<meta name="author" content="Singhai Diamond Collection">
+
+<!-- ===== SEARCH ENGINE ICON (FAVICON) ===== -->
+<link rel="icon" type="image/png" href="favicon.png">
+
+<!-- ===== GOOGLE SEARCH CONSOLE VERIFICATION ===== -->
+<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+
+<!-- ===== SCHEMA MARKUP FOR SEARCH ENGINE ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "JewelryStore",
+  "name": "Singhai Diamond Collection",
+  "image": "https://yourwebsite.com/logo.png",
+  "description": "Natural diamond jewelry from Panna mines.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Panna",
+    "addressCountry": "India"
+  }
+}
+</script>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f9f9f9;
+    text-align:center;
+}
+.search-box{
+    margin:40px auto;
+}
+input{
+    padding:10px;
+    width:250px;
+    border-radius:20px;
+    border:1px solid gray;
+}
+button{
+    padding:10px 20px;
+    border-radius:20px;
+    border:none;
+    background:black;
+    color:white;
+    cursor:pointer;
+}
+.product{
+    margin:10px;
+    padding:10px;
+    background:white;
+    border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Singhai Diamond Collection</h1>
+
+<!-- ===== SEARCH BAR ===== -->
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search Diamonds..." onkeyup="searchProduct()">
+<button onclick="voiceSearch()">🎤</button>
+</div>
+
+<!-- ===== PRODUCTS LIST ===== -->
+<div id="productList">
+<div class="product">Natural Diamond Ring</div>
+<div class="product">Gold Mangalsutra Pendant</div>
+<div class="product">Panna Certified Diamond</div>
+<div class="product">Luxury Diamond Necklace</div>
+</div>
+
+<script>
+
+function searchProduct(){
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let products = document.getElementsByClassName("product");
+
+  for(let i=0; i<products.length; i++){
+    let text = products[i].innerText.toLowerCase();
+    if(text.includes(input)){
+        products[i].style.display = "block";
+    } else {
+        products[i].style.display = "none";
+    }
+  }
+}
+
+// ===== VOICE SEARCH =====
+function voiceSearch(){
+  let recognition = new webkitSpeechRecognition();
+  recognition.lang = "en-IN";
+  recognition.start();
+
+  recognition.onresult = function(event){
+      document.getElementById("searchInput").value = event.results[0][0].transcript;
+      searchProduct();
+  }
+}
+
+</script>
+
+</body>
+</html>
 
 
 
